@@ -1,0 +1,22 @@
+body{
+    background-color: #F7F7F7;
+}
+
+.home_container{
+    display: flex;
+    /* background:#F7F7F7; */
+    padding:22px 20px;
+}
+
+.left_area{
+    /* flex:0.8; */
+    flex-basis:75%;
+}
+
+
+
+.right_area{
+    /* flex:0.2; */
+    flex-basis:25%;
+}  
+

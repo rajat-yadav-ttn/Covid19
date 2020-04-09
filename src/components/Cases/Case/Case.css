@@ -1,0 +1,44 @@
+
+
+.case_container{
+    display: flex;
+    align-items:center;
+    padding:15px 15px;
+    padding-right:10px;
+    box-shadow: 1px 1px 7px 1px #1425401A;
+    margin-left:18px;
+    border-radius:8px;
+    width:100%;
+    z-index: 111;
+    background-color: #fff;
+    
+}
+
+.case_qty_wrap{
+    display: flex;
+    flex-direction: column;
+    flex-basis:40%;
+}
+
+.case_heading{
+    color:#52586A;
+    font-weight:600;
+    font-size: 0.875rem;
+}
+
+.case_qty{
+    color:#30313A;
+    font-size:1.4375rem;
+    margin-top:10px;
+    font-weight:700;
+    margin-right:15px;
+}
+
+.graph_wrap{
+    flex-basis:60%;
+}
+
+.graph_wrap img{
+    width:100%;
+}
+

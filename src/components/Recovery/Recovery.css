@@ -1,0 +1,42 @@
+.container{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 5px 20px 1px #1425401A;
+    border-radius:8px;
+    width:90%;
+    margin-left:20px;
+}
+
+.heading{
+    font-size:1.125rem;
+    font-weight:700;
+    text-align: center;
+    color:#30313A;
+    padding-top:20px;
+}
+
+.percent_container{
+ margin:0 auto;
+ text-align: center; 
+}
+
+.percent_circle_img{
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    padding:5px;
+    box-sizing: border-box;
+    text-align: center;
+    margin:0 auto;
+    margin-top:20px;
+}
+
+.recovery_percent{
+    font-size:1.5rem;
+    font-weight: 600;
+    color:#30313A;
+    position: relative;
+    top:-105px;
+    left:5px;
+}
+
+
