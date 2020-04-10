@@ -15,21 +15,25 @@ class Cases extends Component{
             caseHeading:'Total Cases',
             graphImg:require("../Images/Graph.svg"),
             caseQty:878679,
+            increased:true,
         },
         {
             caseHeading:'Recovered',
             graphImg:require("../Images/Graph-3.svg"),
             caseQty:147359,
+            increased:false,
         },
         {
             caseHeading:'Active Cases',
             graphImg:require("../Images/Graph-2.svg"),
             caseQty:731321,
+            increased:true,
         },
         {
             caseHeading:'Total Death',
             graphImg:require("../Images/Graph-1.svg"),
             caseQty:47097,
+            increased:false,
         }
     ],
 
@@ -64,7 +68,7 @@ class Cases extends Component{
     //     ));
     // }
 
-    
+
 
 
     render(){
@@ -79,6 +83,7 @@ class Cases extends Component{
                                     graphImg={item.graphImg}
                                     caseHeading={item.caseHeading}
                                     caseQty={item.caseQty.toLocaleString()}
+                                    increased={item.increased}
                                 />
                                 );
                        

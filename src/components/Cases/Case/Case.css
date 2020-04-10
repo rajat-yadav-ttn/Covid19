@@ -10,7 +10,6 @@
     width:100%;
     z-index: 111;
     background-color: #fff;
-    
 }
 
 .case_container:not(:first-child){
@@ -20,13 +19,25 @@
 .case_qty_wrap{
     display: flex;
     flex-direction: column;
-    flex-basis:40%;
+    flex-basis:60%;
 }
 
 .case_heading{
     color:#52586A;
     font-weight:600;
     font-size: 0.875rem;
+}
+
+
+
+.icons{
+    margin-left:5px;
+    margin-top:-2px;
+}
+
+.icons img{
+    width:10px;
+
 }
 
 .case_qty{
@@ -38,7 +49,7 @@
 }
 
 .graph_wrap{
-    flex-basis:60%;
+    flex-basis:40%;
 }
 
 .graph_wrap img{

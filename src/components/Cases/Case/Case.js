@@ -7,7 +7,16 @@ const Case = props =>{
     return(
         <div className='case_container' >
             <div className='case_qty_wrap'>
-                <span className='case_heading'>{props.caseHeading}</span>
+                <div>
+                    <span className='case_heading'>{props.caseHeading}</span>
+                    <span className='icons'>
+                        {
+                            props.increased?
+                            <img src={require('../../Images/up-down/Up.svg')} alt="up"/> :
+                            <img src={require('../../Images/up-down/Down.svg')} alt="down"/> 
+                        }
+                    </span>
+                </div>
                 <span className='case_qty'>{props.caseQty}</span>
             </div>
             <div className='graph_wrap'>
