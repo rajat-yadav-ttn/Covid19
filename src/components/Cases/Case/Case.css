@@ -6,12 +6,15 @@
     padding:15px 15px;
     padding-right:10px;
     box-shadow: 1px 1px 7px 1px #1425401A;
-    margin-left:18px;
     border-radius:8px;
     width:100%;
     z-index: 111;
     background-color: #fff;
     
+}
+
+.case_container:not(:first-child){
+    margin-left:18px;
 }
 
 .case_qty_wrap{

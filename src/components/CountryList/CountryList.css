@@ -1,0 +1,71 @@
+.search_list_container{
+    background-color: #fff;
+    box-shadow: 1px 1px 15px 1px #1425401A;
+    border-radius: 10px;
+}
+
+.search_input{
+    width:95%;
+    border-radius:30px;
+    height:40px;
+    /* border:1px solid #adadad; */
+    border:none;
+    box-shadow:2px 2px 5px 2px rgba(192,192,192,0.6);
+    background-color:#f7f7f7;
+    font-size:14px;
+    font-weight: 600;
+    padding-left:10px;
+    margin:15px 15px;
+    width:87%;
+}
+
+.search_input:focus{
+    outline: none;
+}
+
+.country_list{
+    overflow: auto;
+    height:300px;
+}
+
+::-webkit-scrollbar {
+    width:3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:#434e52;
+    outline: 1px solid slategrey;
+  }
+
+
+
+
+
+
+
+/* Country Stat CSS  */
+
+
+.country_stat_container{
+    display: flex;
+    justify-content: space-between;
+    background-color:#fff;
+    padding:10px 15px;
+    border-radius:12px;
+    box-shadow: 1px 1px 7px 1px #1425401A;
+    margin:15px 15px;
+}
+
+.country_name{
+    font-size: 17px;
+    font-weight:600;
+    color:#30313A;
+    margin-bottom:3px;
+}
+
+.stat{
+    font-size:13px;
+    color:#52586A;
+    font-weight:600;
+}
+

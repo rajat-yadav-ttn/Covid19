@@ -1,11 +1,12 @@
 body{
     background-color: #F7F7F7;
+
 }
 
 .home_container{
     display: flex;
-    /* background:#F7F7F7; */
     padding:22px 20px;
+    /* background:#F7F7F7; */
 }
 
 .left_area{
@@ -13,10 +14,23 @@ body{
     flex-basis:75%;
 }
 
+.country_map_row{
+    display: flex;
+}
 
+.CountryList_container{
+    flex-basis:40%;
+    margin:20px 0px;
+}
+
+.Map_container{
+    flex-basis:60%;
+    margin:20px 18px;
+}
 
 .right_area{
     /* flex:0.2; */
     flex-basis:25%;
+    margin:0px 20px;
 }  
 

@@ -11,7 +11,8 @@ const Recovery=(props)=>{
                 <div className='percent_container'>
                     <img src={require('./img/PrecentageBg.svg')} alt="" className='percent_circle_img'/>
                     <div className='recovery_percent'>31.1%</div>
-                </div>     
+                </div>   
+                <div className='aff_rec_data'> 878.5k Affected | 147.3k Recovered</div>  
             </div>
         );
 }
