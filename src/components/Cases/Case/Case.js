@@ -8,7 +8,9 @@ const Case = props =>{
         <div className='case_container' >
             <div className='case_qty_wrap'>
                 <div>
-                    <span className='case_heading'>{props.caseHeading}</span>
+                    
+                        <span className='case_heading'>{props.caseHeading}</span>
+                    
                     <span className='icons'>
                         {
                             props.increased?

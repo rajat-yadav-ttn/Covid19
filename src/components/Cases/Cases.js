@@ -10,65 +10,50 @@ class Cases extends Component{
     constructor(props){
         super(props);
         this.state={
-        cases:[
-        {
-            caseHeading:'Total Cases',
-            graphImg:require("../Images/Graph.svg"),
-            caseQty:878679,
-            increased:true,
-        },
-        {
-            caseHeading:'Recovered',
-            graphImg:require("../Images/Graph-3.svg"),
-            caseQty:147359,
-            increased:false,
-        },
-        {
-            caseHeading:'Active Cases',
-            graphImg:require("../Images/Graph-2.svg"),
-            caseQty:731321,
-            increased:true,
-        },
-        {
-            caseHeading:'Total Death',
-            graphImg:require("../Images/Graph-1.svg"),
-            caseQty:47097,
-            increased:false,
-        }
-    ],
-
-    totalCases:0,
+        cases:[],
+        isLoading:true,
     }
 }
 
     componentDidMount(){
-        // this.getCases();
+        this.getCases();
     }
   
-    // async getCases(){
-    //     await fetch('https://api.thevirustracker.com/free-api?global=stats')
-    //     .then(res=>res.json()).then(res=>res.results.map(i=>{
-    //        if(this.state.cases[0].caseHeading==='Total Cases'){
-    //             this.state.cases[0].caseQty=i.total_cases;
-    //             console.log(i.total_cases);
-    //         }
-            
-    //     }
-    //     ));
-    // }
-    // async getCases(){
-    //     await fetch('https://api.thevirustracker.com/free-api?global=stats')
-    //     .then(res=>res.json()).then(res=>res.results.map(i=>{
-    //        if(this.state.cases[0].caseHeading==='Total Cases'){
-    //             this.state.cases[0].caseQty=i.total_cases;
-    //             console.log(i.total_cases);
-    //         }
-            
-    //     }
-    //     ));
-    // }
-
-
+    async getCases(){
+        await fetch('https://api.thevirustracker.com/free-api?global=stats')
+            .then(res=>res.json())
+            .then(res=>res.results[0])
+            .then(res=>this.setState({
+                cases:[
+                    {
+                        caseHeading:'Total Cases',
+                        graphImg:require("../Images/Graph.svg"),
+                        caseQty:res.total_cases,
+                        increased:true,
+                    },
+                    {
+                        caseHeading:'Recovered',
+                        graphImg:require("../Images/Graph-3.svg"),
+                        caseQty:res.total_recovered,
+                        increased:false,
+                    },
+                    {
+                        caseHeading:'Active Cases',
+                        graphImg:require("../Images/Graph-2.svg"),
+                        caseQty:res.total_active_cases,
+                        increased:true,
+                    },
+                    {
+                        caseHeading:'Total Death',
+                        graphImg:require("../Images/Graph-1.svg"),
+                        caseQty:res.total_deaths,
+                        increased:false,
+                    }
+                ],
+                isLoading:false,
+            }));
+    
+    }
 
 
     render(){
@@ -76,6 +61,16 @@ class Cases extends Component{
             <div className='cases_row'>
                 
                 {
+                    this.state.isLoading?
+                    <div style={{
+                        textAlign:'center',
+                        fontWeight:600,
+                        fontSize:22,
+                        color:'#5f6769',
+                        padding:'35px 0px',
+                        position:'relative',
+                        left:'50%',
+                    }}>Loading</div> :
                     this.state.cases.map((item,index)=>{
                             return(
                                 <Case 
