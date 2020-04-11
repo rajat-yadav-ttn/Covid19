@@ -3,57 +3,37 @@ import React , {Component} from 'react';
 import Case from './Case/Case';
 import './Cases.css';
 
+import {connect} from 'react-redux';
+
+import * as actions from '../../store/actions';
 
 
 
 class Cases extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-        cases:[],
-        isLoading:true,
-    }
-}
+//     constructor(props){
+//         super(props);
+//     //     this.state={
+//     //     cases:[],
+//     //     isLoading:true,
+//     //  }
+// }
 
     componentDidMount(){
-        this.getCases();
+        this.props.fetchCases();
     }
-  
-    async getCases(){
-        await fetch('https://api.thevirustracker.com/free-api?global=stats')
-            .then(res=>res.json())
-            .then(res=>res.results[0])
-            .then(res=>this.setState({
-                cases:[
-                    {
-                        caseHeading:'Total Cases',
-                        graphImg:require("../Images/Graph.svg"),
-                        caseQty:res.total_cases,
-                        increased:true,
-                    },
-                    {
-                        caseHeading:'Recovered',
-                        graphImg:require("../Images/Graph-3.svg"),
-                        caseQty:res.total_recovered,
-                        increased:false,
-                    },
-                    {
-                        caseHeading:'Active Cases',
-                        graphImg:require("../Images/Graph-2.svg"),
-                        caseQty:res.total_active_cases,
-                        increased:true,
-                    },
-                    {
-                        caseHeading:'Total Death',
-                        graphImg:require("../Images/Graph-1.svg"),
-                        caseQty:res.total_deaths,
-                        increased:false,
-                    }
-                ],
-                isLoading:false,
-            }));
-    
+
+    componentWillUnmount(){
+        clearTimeout(this.intervalID);
     }
+
+
+        // getCases(){
+        //     console.log('refresh');
+        //     this.intervalID = setTimeout(this.getCases.bind(this),900000);
+        // }
+        
+
+
 
 
     render(){
@@ -61,7 +41,7 @@ class Cases extends Component{
             <div className='cases_row'>
                 
                 {
-                    this.state.isLoading?
+                    this.props.isLoading?
                     <div style={{
                         textAlign:'center',
                         fontWeight:600,
@@ -71,7 +51,8 @@ class Cases extends Component{
                         position:'relative',
                         left:'50%',
                     }}>Loading</div> :
-                    this.state.cases.map((item,index)=>{
+
+                    this.props.cases.map((item,index)=>{
                             return(
                                 <Case 
                                     key={index}
@@ -89,4 +70,18 @@ class Cases extends Component{
     }
 }
 
-export default Cases;
+const mapStateToProps=state=>{
+    return{
+        cases:state.cases,
+        isLoading:state.isCasesLoading,
+    }
+}
+
+
+const mapDispatchToProps=dispatch=>{
+    return{
+        fetchCases:()=>{ dispatch(actions.fetchCases()) }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Cases);

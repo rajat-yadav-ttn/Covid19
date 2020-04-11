@@ -7,7 +7,13 @@ class LatestTweets extends Component{
 
     }
 
+
+    componentDidMount(){
+       
+    }
+
     render(){
+
         return(
             <div className='latest_tweets_container'>
                 <h3>Latest Tweets</h3>

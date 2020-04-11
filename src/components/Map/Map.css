@@ -1,0 +1,9 @@
+.map_container{
+    
+}
+
+.popup_column{
+    display: flex;
+    flex-direction: column;
+}
+

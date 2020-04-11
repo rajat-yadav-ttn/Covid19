@@ -1,0 +1,16 @@
+.container{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 5px 20px 1px #1425401A;
+    width:100%;
+    padding:14px 16px 0px 16px;
+    box-sizing: border-box;
+    /* margin-top:20px; */
+}
+
+h3{
+    color:#30313A;
+    font-size: 18px;
+    margin:0;
+    padding:0;
+}

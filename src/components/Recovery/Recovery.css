@@ -4,8 +4,8 @@
     box-shadow: 0px 5px 20px 1px #1425401A;
     border-radius:8px;
     width:100%;
-    /* margin-left:20px; */
-    padding-bottom:25px;
+    padding-bottom:30px !important;    
+    position: relative;
 }
 
 .heading{
@@ -41,9 +41,23 @@
 }
 
 .aff_rec_data{
-    font-size:14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:-20px;
+}
+
+.aff_rec_data div{
+    font-size:16px;
     color:#52586A;
     font-weight: 600;
     text-align: center;
-    margin-top:-10px;
+    margin-top:16px;
+    text-align: center;
+}
+
+.svg_circle{
+    position: absolute;
+    top:115px;
+    left:105px;
 }

@@ -14,23 +14,41 @@ body{
     flex-basis:75%;
 }
 
-.country_map_row{
-    display: flex;
-}
+
 
 .CountryList_container{
     flex-basis:40%;
-    margin:20px 0px;
+    margin:20px 0px 0px 0px;
 }
 
 .Map_container{
     flex-basis:60%;
-    margin:20px 18px;
+    margin:20px 0px 0px 18px;
 }
 
 .right_area{
     /* flex:0.2; */
     flex-basis:25%;
-    margin:0px 20px;
+    margin-left:18px;
 }  
 
+
+.row{
+    display: flex;
+}
+
+.margin_top_20{
+    margin-top:20px;
+}
+
+.SpreadTrends_container{
+    flex-basis:55%;
+    margin-right:9px;
+}
+
+
+
+.News_container{
+    flex-basis:45%;
+    margin-left:9px;
+}

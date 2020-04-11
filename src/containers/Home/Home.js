@@ -4,11 +4,15 @@ import './Home.css';
 import Cases from '../../components/Cases/Cases';
 import Recovery from '../../components/Recovery/Recovery';
 import CountryList from '../../components/CountryList/CountryList';
-import Map from '../../components/Map/Map';
+import MapDisplay from '../../components/Map/Map';
 import LatestTweets from '../../components/LatestTweets/LatestTweets';
+import SpreadTrends from '../../components/SpreadTrends/SpreadTrends';
+import News from '../../components/News/News';
+
 
 
 class Home extends Component{
+    
     render(){
         return(
             <div className='home_container'>
@@ -17,12 +21,21 @@ class Home extends Component{
                         <Cases />
                     </div>
                     
-                    <div className='country_map_row'>
+                    <div className='row'>
                         <div className='CountryList_container'>
                             <CountryList />
                         </div>
                         <div className='Map_container'>
-                            <Map />
+                            <MapDisplay />
+                        </div>
+                    </div>
+
+                    <div className='row margin_top_20'>
+                        <div className='SpreadTrends_container'>
+                                <SpreadTrends />
+                        </div>
+                        <div className='News_container'>
+                                <News />
                         </div>
                     </div>
 
