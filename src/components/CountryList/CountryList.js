@@ -27,7 +27,7 @@ class CountryList extends Component{
                     isLoading:false
                 }))
 
-                console.log(countryCases);
+                // console.log(countryCases);
 
                 let sortedCases=countryCases.sort((prev,curr)=>
                      curr.latest_data.confirmed-prev.latest_data.confirmed

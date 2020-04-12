@@ -5,18 +5,33 @@ import './SpreadTrends.css';
 import {Line} from 'react-chartjs-2';
 
 const cnfData = {
-    labels: ['9 Feb', '16 Feb', '23 Feb',
-             '1 March', '8 March' , '15 March' ,'21 March'],
+    labels: ['9 Feb', '16 Feb', '23 Feb','1 Mar'],
     datasets: [
       {
         label: 'Rainfall',
         backgroundColor: 'transparent',
         borderColor: 'rgba(255,0,0,1)',
         borderWidth: 2,
+        data: [100,900,2000,5000]
+      }
+    ]
+  }
+
+const recData = {
+    labels: ['9 Feb', '16 Feb', '23 Feb',
+             '1 March', '8 March' , '15 March' ,'21 March'],
+    datasets: [
+      {
+        label: 'Rainfall',
+        backgroundColor: 'transparent',
+        borderColor: 'rgba(0,255,0,1)',
+        borderWidth: 2,
         data: [ 550123, 580123,610123, 620123, 680123 , 714196],
       }
     ]
   }
+
+
 
 const Confirmed =props=>(
     <div>
@@ -26,7 +41,7 @@ const Confirmed =props=>(
             title:{
               display:true,
               text:'Confirmed Cases',
-              fontSize:20
+              fontSize:20,
             },
             legend:{
               display:false,
@@ -38,7 +53,7 @@ const Confirmed =props=>(
 
 const Recovered=props=>(
     <div><Line
-    data={cnfData}
+    data={recData}
     options={{
       title:{
         display:true,
@@ -57,7 +72,6 @@ const Deceased=props=>(
         <Line
         data={cnfData}
         options={{
-        
         title:{
             display:true,
             text:'Deceased Cases',

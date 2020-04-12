@@ -1,11 +1,10 @@
 .container{
-    width: 100%;
     background-color: #fff;
     box-shadow: 0px 5px 20px 1px #1425401A;
     border-radius:8px;
     width:100%;
     padding-bottom:30px !important;    
-    position: relative;
+    /* position: relative; */
 }
 
 .heading{
@@ -16,10 +15,6 @@
     padding-top:20px;
 }
 
-.percent_container{
- margin:0 auto;
- text-align: center; 
-}
 
 .percent_circle_img{
     background-color: #F5F5F5;
@@ -31,14 +26,7 @@
     margin-top:20px;
 }
 
-.recovery_percent{
-    font-size:1.5rem;
-    font-weight: 600;
-    color:#30313A;
-    position: relative;
-    top:-105px;
-    left:5px;
-}
+
 
 .aff_rec_data{
     display: flex;
@@ -56,8 +44,9 @@
     text-align: center;
 }
 
-.svg_circle{
-    position: absolute;
-    top:115px;
-    left:105px;
-}
+/* text{
+    font-size:14px;
+} */
+
+
+

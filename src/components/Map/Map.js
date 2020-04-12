@@ -21,7 +21,8 @@ componentDidMount(){
         .then(res=>res.json())
         .then(res=>{
             this.setState({regions:res})    
-            console.log(this.state.regions[0].countryInfo.long)});
+            // console.log(this.state.regions[0].countryInfo.long)
+        });
 }
 
     render(){
@@ -39,6 +40,7 @@ componentDidMount(){
                     easeLinearity={0.35}
                     >
                     <TileLayer
+                    // url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'
                     url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'
                     
                     />
@@ -49,8 +51,10 @@ componentDidMount(){
                     key={mark.countryInfo._id}
                     position={[mark.countryInfo.lat, mark.countryInfo.long]}
                     >
+
                         <Popup>
                             <div className='popup_column'>
+                                <b>{mark.country}</b>
                                 <div>
                                     Cases:<b>{mark.cases}</b>
                                 </div>

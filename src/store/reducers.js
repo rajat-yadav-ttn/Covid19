@@ -3,6 +3,8 @@ const initialState={
     isCasesLoading:true,
     affected:0,
     recovered:0,
+    news:null,
+    isNewsLoading:true,
 }
 
 const reducer=(state=initialState,action)=>{
@@ -41,9 +43,18 @@ const reducer=(state=initialState,action)=>{
                 recovered:action.data.total_recovered,
             }
 
+        case 'GET_NEWS':
+            return {
+                ...state,
+                news:action.data.articles,
+                isNewsLoading:false,
+            }
+
         default:
             return state;
     }
 }
+
+
 
 export default reducer;

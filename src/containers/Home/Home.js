@@ -4,7 +4,8 @@ import './Home.css';
 import Cases from '../../components/Cases/Cases';
 import Recovery from '../../components/Recovery/Recovery';
 import CountryList from '../../components/CountryList/CountryList';
-import MapDisplay from '../../components/Map/Map';
+// import MapDisplay from '../../components/Map/Map';
+import Map2 from '../../components/Map/Map2';
 import LatestTweets from '../../components/LatestTweets/LatestTweets';
 import SpreadTrends from '../../components/SpreadTrends/SpreadTrends';
 import News from '../../components/News/News';
@@ -26,7 +27,7 @@ class Home extends Component{
                             <CountryList />
                         </div>
                         <div className='Map_container'>
-                            <MapDisplay />
+                            <Map2 />
                         </div>
                     </div>
 

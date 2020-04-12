@@ -25,7 +25,7 @@
 
 .country_list{
     overflow: auto;
-    height:300px;
+    height:343px;
 }
 
 ::-webkit-scrollbar {
@@ -53,7 +53,7 @@
     padding:10px 15px;
     border-radius:12px;
     box-shadow:2px 2px 4px 2px #1425401A;
-    margin:15px 15px;
+    margin:14px 15px;
 }
 
 .flag_name_wrap{
