@@ -3,7 +3,7 @@ import './App.css';
 
 // import Cases from './components/Cases/Cases';
 import  Home  from './containers/Home/Home';
-import  FAQs  from './containers/FAQs';
+import  FAQs  from './containers/FAQs/FAQs';
 import HelpfulLinks from './containers/HelpfulLinks';
 
 import {Switch , Route} from 'react-router-dom';

@@ -13,7 +13,12 @@ import News from '../../components/News/News';
 
 
 class Home extends Component{
-    
+    state = {
+        data: [
+          ["MB", 75], ["SK", 43], ["AB", 50], ["BC", 88], ["NU", 21], ["NT", 43],
+          ["YT", 21], ["ON", 19], ["QC", 60], ["NB", 4], ["NS", 44], ["NF", 38],
+          ["PE", 67]],
+      }
     render(){
         return(
             <div className='home_container'>
@@ -27,7 +32,7 @@ class Home extends Component{
                             <CountryList />
                         </div>
                         <div className='Map_container'>
-                            <Map2 />
+                            <Map2 data={this.state.data}/>
                         </div>
                     </div>
 

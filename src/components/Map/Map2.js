@@ -5,8 +5,6 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Sphere,
-  Graticule,
   ZoomableGroup
 } from "react-simple-maps";
 
@@ -16,46 +14,63 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 const colorScale = scaleLinear()
-  .domain([0.29, 0.68])
-  .range(["#ffedea", "#ff5233"]);
+  .domain([2000, 80000])
+  .range(["#FFC4C6", "#FF0019"]);
 
-const MapChart = () => {
+const Map2 = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    csv(`/vulnerability.csv`).then(data => {
-      setData(data);
-    });}, []);
+    // csv(`/vulnerability.csv`)
+    csv(`/country-data.csv`)
+    .then(data => {setData(data);});
+  }, []);
 
-    return (
-      <div className='map_container'>
-      <ComposableMap
-        projectionConfig={{
-          rotate: [-30, 0, 0],
-          scale:186
-        }}
-      >
-        {data.length > 0 && (
-          <ZoomableGroup zoom={1}>
-          <Geographies geography={geoUrl}>
-            {({ geographies }) =>
-              geographies.map(geo => {
-                const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
+console.log(data);
+
+  return (
+    <div className='map_container'>
+      <div className='map_label'>
+         <span className="head"> COVID-19 Affected Areas </span>
+          <div className="sub">
+              <span>Most Affected</span>
+              <span>Less Affected</span>
+          </div>
+      </div>
+    <ComposableMap
+      projectionConfig={{
+        rotate: [-10, 0, 0],
+        scale: 186
+      }}
+    >
+      
+      {data.length > 0 && (
+        <ZoomableGroup zoom={1}>
+        <Geographies geography={geoUrl}>
+          {({ geographies }) =>
+            geographies.map(geo => {
+              
+              const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
+              // console.log(geo.properties.NAME);
+                // console.log(de);
                 return (
                   <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill={d ? colorScale(d["2017"]) : "#F5F4F6"}
+                  key={geo.rsmKey}
+                  geography={geo}
+                  fill={d ? colorScale(d["total"]) : "#F5F4F6"}
                   />
                   );
             })
           }
         </Geographies>
-        </ZoomableGroup>
+      </ZoomableGroup>
       )}
     </ComposableMap>
+
+    {/* {data.map(i=>console.log(i.Cases))} */}
+
     </div>
   );
 };
 
-export default MapChart;
+export default Map2;

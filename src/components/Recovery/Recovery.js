@@ -57,7 +57,10 @@ class Recovery extends Component{
 
                             <g>
                                 <text x='11' y='20' fontSize='6px'>                                    
-                                        {percentage.toFixed(1)}%
+                                    {
+                                        !this.props.isCasesLoading &&
+                                        `${percentage.toFixed(1)}%` 
+                                    }
                                 </text>
                             </g>
 
@@ -72,7 +75,7 @@ class Recovery extends Component{
             <div className='aff_rec_data'> 
                 <div>
                 {
-                    this.props.affected.toString()>3?
+                    this.props.affected>3?
                     `${this.props.affected/1000}k` : this.props.affected
                 } Affected
                 </div>
@@ -80,7 +83,7 @@ class Recovery extends Component{
                 <div>
                     
                     {
-                        this.props.recovered.toString()>3?
+                        this.props.recovered>3?
                         `${this.props.recovered/1000}k` : this.props.recovered
                     } Recovered
                 </div>
@@ -95,6 +98,7 @@ const mapStateToProps=state=>{
     return{
         affected:state.affected,
         recovered:state.recovered,
+        isCasesLoading:state.isCasesLoading,
     }
 }
 

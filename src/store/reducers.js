@@ -16,31 +16,32 @@ const reducer=(state=initialState,action)=>{
                     {
                         caseHeading:'Total Cases',
                         graphImg:require("../Images/Graph/Graph.svg"),
-                        caseQty:action.data.total_cases,
+                        caseQty:action.data.cases,
                         increased:true,
                     },
                     {
                         caseHeading:'Recovered',
                         graphImg:require("../Images/Graph/Graph-3.svg"),
-                        caseQty:action.data.total_recovered,
+                        caseQty:action.data.recovered,
                         increased:false,
                     },
                     {
                         caseHeading:'Active Cases',
                         graphImg:require("../Images/Graph/Graph-2.svg"),
-                        caseQty:action.data.total_active_cases,
+                        caseQty:action.data.active,
                         increased:true,
                     },
                     {
                         caseHeading:'Total Death',
                         graphImg:require("../Images/Graph/Graph-1.svg"),
-                        caseQty:action.data.total_deaths,
+                        caseQty:action.data.deaths,
                         increased:false,
                     }
                 ],
                 isCasesLoading:false,
-                affected:action.data.total_cases,
-                recovered:action.data.total_recovered,
+                affected:action.data.cases,
+                recovered:action.data.recovered,
+        
             }
 
         case 'GET_NEWS':

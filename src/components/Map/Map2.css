@@ -2,4 +2,29 @@
     background:#fff;
     border-radius:10px;
     box-shadow: 0px 5px 20px 1px #1425401A;
+    height:415px;
+}
+
+.map_label{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 12px;
+    box-sizing: border-box;
+}
+
+span.head{
+    color:#30313A;
+    font-size:20px;
+    font-weight:600;
+}
+
+.sub{
+
+}
+
+.sub span{
+    font-size:12px;
+    font-weight:600;
+    color:#52586A;
+    margin-right:5px;
 }

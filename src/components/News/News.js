@@ -13,7 +13,7 @@ const NewsItem=props=>{
      d=pdate.getDate(),
      m=pdate.getMonth(),
      y=pdate.getFullYear(),
-     date=`${d}/${m}/${y}`;
+     date=`${d}/${m+1}/${y}`;
     
   return(
       <div className='news_item_container'>
@@ -120,3 +120,5 @@ const mapDispatchToProps=dispatch=>{
 
 export default connect(mapStateToProps,mapDispatchToProps)(News);
 // export default News;
+
+// twurl authorize --consumer-key iRXTer7Xap9pRc5E2XTXUZpuH --consumer-secret 7m0ZqO0YSgxJ1myuB4iflwwF5fZZFcYWk6iqiIIBYFlYe7lWae

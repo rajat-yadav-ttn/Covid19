@@ -37,6 +37,8 @@ class Cases extends Component{
 
 
     render(){
+
+        console.log(this.props.cases)
         return(
             <div className='cases_row'>
                 

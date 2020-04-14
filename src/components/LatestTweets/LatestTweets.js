@@ -9,7 +9,9 @@ class LatestTweets extends Component{
 
 
     componentDidMount(){
-       
+        fetch('/1.1/search/tweets.json?q=#starwars&result_type=popular')
+            // .then(res=>res.json())
+            .then(res=>console.log(res));
     }
 
     render(){
