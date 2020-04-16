@@ -9,10 +9,21 @@ class LatestTweets extends Component{
 
 
     componentDidMount(){
-        fetch('/1.1/search/tweets.json?q=#starwars&result_type=popular')
-            // .then(res=>res.json())
+        let apiUrl='https://api.twitter.com/labs/2/tweets/search?query=covid-19&tweet.fields=created_at,author_id,lang,context_annotations&max_results=100'
+        const proxyUrl='https://cors-anywhere.herokuapp.com/'
+        fetch(proxyUrl+apiUrl,{
+            method:'GET',
+            // mode:'no-cors',
+            headers:{
+                    'Authorization':'Bearer AAAAAAAAAAAAAAAAAAAAAI95DgEAAAAAV7KQhUhikghHI9Nr45Jhm%2BZQx6M%3DAZChWMQdQoAOYftiB7hAA0VcERqHvGgmwz5EsGoSAubG4hNn9W'
+                    }
+        })
+            .then(res=>res.json())
             .then(res=>console.log(res));
+            
     }
+
+
 
     render(){
 

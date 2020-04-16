@@ -5,6 +5,7 @@ const initialState={
     recovered:0,
     news:null,
     isNewsLoading:true,
+    darkMode:false,
 }
 
 const reducer=(state=initialState,action)=>{
@@ -55,7 +56,6 @@ const reducer=(state=initialState,action)=>{
             return state;
     }
 }
-
 
 
 export default reducer;

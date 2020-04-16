@@ -72,8 +72,8 @@ class News extends Component{
         }
       }
 
-      if(!this.props.isNewsLoading){
-        console.log(this.props.news)}
+      // if(!this.props.isNewsLoading){
+      //   console.log(this.props.news)}
       
       return(
         <div className='news_container'>

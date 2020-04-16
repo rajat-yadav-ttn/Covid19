@@ -4,8 +4,12 @@ import './Navbar.css';
 // import NavItem from './NavItem';
 import { NavLink } from 'react-router-dom';
 import '../../assets/fonts.css';
+// import { connect } from 'react-redux';
+
+
 
 const Navbar = props =>{
+
     return(
         <nav>
             <div className='logo'>
@@ -42,8 +46,16 @@ const Navbar = props =>{
             </div>
             
             
+            
         </nav>
     );
 }
+
+// const mapDispatchToProps=dispatch=>{
+//     return{
+//         enableDarkMode:()=>{dispatch({type:'DARK_MODE'})}
+//     }
+// }
+
 
 export default Navbar;

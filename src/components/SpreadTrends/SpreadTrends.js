@@ -4,61 +4,45 @@ import './SpreadTrends.css';
 
 import {Line} from 'react-chartjs-2';
 
-const cnfData = {
-    labels: ['9 Feb', '16 Feb', '23 Feb','1 Mar'],
-    datasets: [
-      {
-        label: 'Rainfall',
-        backgroundColor: 'transparent',
-        borderColor: 'rgba(255,0,0,1)',
-        borderWidth: 2,
-        data: [100,900,2000,5000]
-      }
-    ]
-  }
 
-const recData = {
-    labels: ['9 Feb', '16 Feb', '23 Feb',
-             '1 March', '8 March' , '15 March' ,'21 March'],
-    datasets: [
-      {
-        label: 'Rainfall',
-        backgroundColor: 'transparent',
-        borderColor: 'rgba(0,255,0,1)',
-        borderWidth: 2,
-        data: [ 550123, 580123,610123, 620123, 680123 , 714196],
-      }
-    ]
-  }
+
+
+
+
+
 
 
 
 const Confirmed =props=>(
     <div>
         <Line
-          data={cnfData}
+          data={props.cnfData}
           options={{
+            responsive:true,
             title:{
               display:true,
               text:'Confirmed Cases',
-              fontSize:20,
+              fontSize:18,
             },
             legend:{
               display:false,
-            }
+            },
+            
+         
           }}
         />
     </div>
 );
 
 const Recovered=props=>(
-    <div><Line
-    data={recData}
+    <div> <Line
+    data={props.recData}
     options={{
+      responsive:true,
       title:{
         display:true,
         text:'Recovered Cases',
-        fontSize:20
+        fontSize:18,
       },
       legend:{
         display:false,
@@ -69,19 +53,20 @@ const Recovered=props=>(
 
 const Deceased=props=>(
     <div>
-        <Line
-        data={cnfData}
-        options={{
-        title:{
-            display:true,
-            text:'Deceased Cases',
-            fontSize:20
-        },
-        legend:{
-            display:false,
-        }
-    }}
-  />
+         <Line
+          data={props.deathData}
+          options={{
+            responsive:true,
+            title:{
+              display:true,
+              text:'Deceased Cases',
+              fontSize:18,
+            },
+            legend:{
+              display:false,
+            }
+          }}
+        />
   </div>
 )
 
@@ -89,9 +74,13 @@ const Deceased=props=>(
 
 class SpreadTrends extends Component{
     state={
+      datesLabel:null,
         showCnf:true,
+        cnfCases:[],
         showRec:false,
-        showDec:false
+        recCases:[],
+        showDec:false,
+        decCases:[],
     }
     
     
@@ -123,17 +112,96 @@ decHandler=(e)=>{
 
 }
 
+componentDidMount(){
+  this.fetchHistoryData();
+}
+
+
+async fetchHistoryData(){
+  let cases=[];
+  await fetch('https://corona.lmao.ninja/v2/historical/all')
+          .then(res=>res.json())
+          .then(res=>{
+             cases=res;
+          });
+
+          // console.log(cases);
+          let casesArr=Object.keys(cases).map((key)=>cases[key]);
+          // console.log(casesArr);
+
+          let confirmed=casesArr[0];
+            let casesKeys=Object.keys(confirmed).reverse().slice(0,7).reverse();
+            this.setState({datesLabel:casesKeys})
+
+
+            let cnfCases=Object.values(confirmed).reverse().slice(0,7).reverse();
+            this.setState({cnfCases:cnfCases})
+
+          let recovered=casesArr[2];
+            let recCases=Object.values(recovered).reverse().slice(0,7).reverse();
+            this.setState({recCases:recCases})
+          
+          let deceased=casesArr[1];
+            let decCases=Object.values(deceased).reverse().slice(0,7).reverse();
+            this.setState({decCases:decCases})
+
+          
+        }
+        
+
+
 
     render(){
+
+      const cnfData = {
+        labels: this.state.datesLabel,
+        datasets: [
+          {
+            label: 'Confirmed Cases',
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(255,0,0,1)',
+            borderWidth: 2,
+            data: this.state.cnfCases,
+          }
+        ]
+      }
+      const recData = {
+        labels: this.state.datesLabel,
+        datasets: [
+          {
+            label: 'Recovered Cases',
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(0,255,0,1)',
+            borderWidth: 2,
+            data: [...this.state.recCases,this.state.cnfCases[6]],
+          }
+        ]
+      }
+      const deathData = {
+        labels: this.state.datesLabel,
+        datasets: [
+          {
+            label: 'Deceased Cases',
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(255,0,0,1)',
+            borderWidth: 2,
+            data: this.state.decCases,
+          }
+        ]
+      }
+
+
+
+
         let {showCnf,showRec,showDec}=this.state;
         const renderTab=()=>{
             
             if(showCnf){
-                return <Confirmed />
+                return <Confirmed cnfData={cnfData}/>
             } else if(showRec){
-                return <Recovered />
+                return <Recovered recData={recData}/>
             }else if(showDec){
-                return <Deceased />
+                return <Deceased deathData={deathData}/>
             }
         }
         return(

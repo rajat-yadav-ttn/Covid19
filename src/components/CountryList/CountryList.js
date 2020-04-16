@@ -8,7 +8,7 @@ class CountryList extends Component{
         countries:[],
         increased:true,
         isLoading:true,
-        countrySearchInput:'',
+        searchVal:'',
     }
 
 
@@ -27,8 +27,6 @@ class CountryList extends Component{
                     isLoading:false
                 }))
 
-                // console.log(countryCases);
-
                 let sortedCases=countryCases.sort((prev,curr)=>
                      curr.latest_data.confirmed-prev.latest_data.confirmed
                     );
@@ -38,13 +36,18 @@ class CountryList extends Component{
 
     handleSearchInput=event=>{
         this.setState({
-            countrySearchInput:event.target.value
+            searchVal:event.target.value
         })   
     }
 
 
         
-    render(){
+render(){
+    
+    const searched=this.state.countries.filter((country)=>{
+        return  this.state.searchVal==='' ? country : country.name.toLowerCase().includes(this.state.searchVal.toLowerCase())
+    })
+
         return(
             <div className='search_list_container'>
                 <div className='wrapper'>
@@ -53,7 +56,7 @@ class CountryList extends Component{
                         placeholder='Search Location' 
                         className='search_input'
                         onChange={this.handleSearchInput}
-                        value={this.state.countrySearchInput}
+                        value={this.state.searchVal}
                         />
 
                     <div className='country_list'>
@@ -71,7 +74,10 @@ class CountryList extends Component{
                                     
                                         }}>Loading...</div> :
 
-                            this.state.countries.map(i=>{
+                                  
+                                       
+
+                            searched.map(i=>{
                                 return <CountryStat 
                                             key={i.code}
                                             name={i.name}

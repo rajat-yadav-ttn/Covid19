@@ -14,10 +14,13 @@ class Recovery extends Component{
     }
     
     render(){
+
         let percentage=(this.props.recovered/this.props.affected)*100
         return(
             <div className='container'>
 
+           
+                
             <div className='heading'> Ratio of Recovery</div>  
 
                 <figure>
@@ -42,7 +45,7 @@ class Recovery extends Component{
                             strokeDashoffset='25'
                         />
 
-                        <filter id="shadow2">
+                        <filter id="shadow">
                             <feDropShadow dx='0' dy='0' stdDeviation='2' 
                                 floodColor='#2fd0aa26' />
                         </filter>
@@ -52,11 +55,11 @@ class Recovery extends Component{
                             cy='19'
                             r='10'
                             fill='#fff'
-                            filter="url(#shadow2)"
+                            filter="url(#shadow)"
                         />
 
                             <g>
-                                <text x='11' y='20' fontSize='6px'>                                    
+                                <text x='11' y='21' fontSize='6px'>                                    
                                     {
                                         !this.props.isCasesLoading &&
                                         `${percentage.toFixed(1)}%` 

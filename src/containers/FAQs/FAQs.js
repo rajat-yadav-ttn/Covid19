@@ -1,28 +1,35 @@
-import React ,{Component} from 'react';
+import React  from 'react';
+import QNAList from './QNAList';
+import './FAQs.css';
 
 const QAbox=props=>(
     <div className='QA_box'>
         <div className='ques'>
-
+           Q{props.index}. {props.ques}
         </div>
         <div className='ans'>
-
+            {props.answer}
         </div>
     </div>
 )
 
-class FAQs extends Component{
-    state={
-
-    }
-
-    render(){
+const FAQs =()=>{
         return(
-            <div>
-                FAQS
+            <div className='faq_body'>
+                <div className='faq_container'>
+                    <div className='faq_heading'>Frequently Asked Questions</div>
+                    {
+                        QNAList.map((item,index)=>{
+                            return <QAbox 
+                                        index={index+1}
+                                        ques={item.ques}
+                                        answer={item.answer}
+                                    />
+                        })
+                    }
+                </div>
             </div>
         )
-    }  
 }
 
 export default FAQs;

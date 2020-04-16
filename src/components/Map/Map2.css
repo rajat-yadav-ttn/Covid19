@@ -2,7 +2,7 @@
     background:#fff;
     border-radius:10px;
     box-shadow: 0px 5px 20px 1px #1425401A;
-    height:415px;
+    height:400px;
 }
 
 .map_label{
@@ -18,13 +18,25 @@ span.head{
     font-weight:600;
 }
 
-.sub{
 
-}
 
-.sub span{
+.legend span{
     font-size:12px;
     font-weight:600;
     color:#52586A;
     margin-right:5px;
+    display: flex;
+    align-items: center;
+}
+
+.color_block{
+    width:12px;
+    height:12px;
+    background-color:#FF0019;
+    border-radius:8px;
+    margin-right:5px;
+}
+
+.least{
+    background-color:#FFC4C6;
 }

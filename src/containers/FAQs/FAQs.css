@@ -1,4 +1,40 @@
+.faq_body{
+    background:#f7f7f7;
+}
+
+.faq_container{
+    width:80%;
+    margin:auto;
+}
+
+.faq_heading{
+    font-size:22px;
+    font-weight: 600;
+    color:#30313A;
+    margin:20px auto;
+}
+
+
 .QA_box{
     box-shadow: 0px 5px 20px 1px #1425401A;
     background-color:#fff;
+    width:100%;
+    margin:auto;
+    margin:15px 0;
+    border-radius:10px;
+    padding:12px;
+}
+
+.ques{
+    font-size:18px;
+    color:#30313A;
+    font-weight:600;
+}
+
+.ans{
+    font-size:16px;
+    color:#30313A;
+    font-weight:500;
+    opacity:0.9;
+    margin-top:10px;
 }

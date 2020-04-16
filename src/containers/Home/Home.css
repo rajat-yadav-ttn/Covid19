@@ -1,6 +1,5 @@
 body{
-    background-color: #F7F7F7;
-
+    background-color: #fff;
 }
 
 .home_container{
@@ -14,6 +13,9 @@ body{
     flex-basis:75%;
 }
 
+.map_country_row{
+    display: flex;
+}
 
 
 .CountryList_container{
@@ -33,7 +35,7 @@ body{
 }  
 
 
-.row{
+.st_news{
     display: flex;
 }
 
@@ -51,4 +53,11 @@ body{
 .News_container{
     flex-basis:45%;
     margin-left:9px;
+}
+
+
+@media(max-width:768px){
+    .home_container{
+        flex-direction: column;
+    }
 }
