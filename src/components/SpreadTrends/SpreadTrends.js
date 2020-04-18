@@ -173,7 +173,7 @@ async fetchHistoryData(){
             backgroundColor: 'transparent',
             borderColor: 'rgba(0,255,0,1)',
             borderWidth: 2,
-            data: [...this.state.recCases,this.state.cnfCases[6]],
+            data: this.state.recCases,
           }
         ]
       }

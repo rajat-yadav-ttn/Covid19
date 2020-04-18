@@ -1,6 +1,6 @@
-.faq_body{
+/* .faq_body{
     background:#f7f7f7;
-}
+} */
 
 .faq_container{
     width:80%;
@@ -11,7 +11,8 @@
     font-size:22px;
     font-weight: 600;
     color:#30313A;
-    margin:20px auto;
+    padding-top:20px;
+    margin:auto;
 }
 
 
@@ -37,4 +38,8 @@
     font-weight:500;
     opacity:0.9;
     margin-top:10px;
+}
+
+.ans a{
+    text-decoration:none;
 }

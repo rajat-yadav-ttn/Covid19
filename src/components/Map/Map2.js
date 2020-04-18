@@ -16,7 +16,7 @@ const geoUrl =
 
 const colorScale = scaleLinear()
   .domain([100, 80000])
-  .range(["#FFC4C6", "#FF0019"]);
+  .range(["#FFC4C6","#FF797D","#F52D5C"]);
 
 const Map2 = () => {
   const [data, setData] = useState([]);
@@ -50,7 +50,7 @@ const Map2 = () => {
     >
       
       {data.length > 0 && (
-        <ZoomableGroup zoom={1}>
+        <ZoomableGroup >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map(geo => {
