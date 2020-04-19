@@ -10,6 +10,7 @@
     width:100%;
     z-index: 111;
     background-color: #fff;
+    flex-basis:20%;
 }
 
 .case_container:not(:first-child){
@@ -56,3 +57,37 @@
     width:100%;
 }
 
+
+@media(max-width:768px){
+    .case_container{
+        flex-basis: 45%;
+        margin-top:10px;
+    }
+
+    .case_container:not(:first-child){
+            margin-left:0px;
+    }
+
+    .case_container:nth-child(even){
+        margin-left: 8px;
+    }
+
+}
+
+@media(max-width:625px){
+    .case_container{
+        flex-basis:42.5%;
+    }
+}
+
+
+@media(max-width:425px){
+    .case_container{
+        flex-basis:100%;
+        margin-left:0px;
+    }
+
+    .case_container:nth-child(even){
+        margin-left:0px;
+    }
+}

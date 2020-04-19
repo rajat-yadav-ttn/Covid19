@@ -11,11 +11,11 @@ import SpreadTrends from '../../components/SpreadTrends/SpreadTrends';
 import News from '../../components/News/News';
 
 
-
 class Home extends Component{
    
     render(){
         return(
+            <div>
             <div className='home_container'>
                 <div className='left_area'>
                     <div className='cases_container'>
@@ -49,6 +49,7 @@ class Home extends Component{
                         <LatestTweets />
                     </div>
                 </div>
+            </div>
             </div>
     
         );

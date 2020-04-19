@@ -52,6 +52,8 @@ const reducer=(state=initialState,action)=>{
                 isNewsLoading:false,
             }
 
+     
+
         default:
             return state;
     }

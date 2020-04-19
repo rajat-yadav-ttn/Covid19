@@ -57,7 +57,30 @@ body{
 
 
 @media(max-width:768px){
-    .home_container{
+    .home_container,.map_country_row,.st_news{
         flex-direction: column;
+    }
+
+    .News_container{
+        margin-top:20px;
+        margin-left:0px;
+    }
+
+    .Map_container{
+        margin:0;
+        margin-top:20px;
+    }
+
+    .right_area{
+        margin:0;
+    }
+
+    .recovery_container{
+        margin-top: 20px;
+        width:100%;
+    }
+
+    .SpreadTrends_container{
+        margin-right:0px;
     }
 }

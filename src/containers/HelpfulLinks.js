@@ -36,6 +36,7 @@ const HelpfulLinks =()=>{
                     {
                         urlList.map((item,index)=>{
                             return <URLBox 
+                                        key={index}
                                         index={index+1}
                                         name={item.name}
                                         url={item.url}

@@ -24,6 +24,7 @@
     margin:15px 0;
     border-radius:10px;
     padding:12px;
+    overflow: hidden;
 }
 
 .ques{
@@ -42,4 +43,5 @@
 
 .ans a{
     text-decoration:none;
+    text-overflow: ellipsis;
 }

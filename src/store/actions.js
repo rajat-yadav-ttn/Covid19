@@ -5,14 +5,6 @@ export const getCases=(cases)=>{
     }
 }
 
-export const getNews=(news)=>{
-    return{
-        type:'GET_NEWS',
-        data:news,
-    }
-}
-
-
 
 export const fetchCases=()=>{
     return dispatch=>{
@@ -23,6 +15,14 @@ export const fetchCases=()=>{
             });
     }
 }
+
+export const getNews=(news)=>{
+    return{
+        type:'GET_NEWS',
+        data:news,
+    }
+}
+
 
 export const fetchNews=()=>{
     return  dispatch=>{
@@ -40,3 +40,8 @@ export const fetchNews=()=>{
             .catch(err=>console.log(err))
     }
 }
+
+
+
+
+

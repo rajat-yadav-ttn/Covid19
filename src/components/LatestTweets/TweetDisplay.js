@@ -35,7 +35,7 @@ const TweetDisplay =(props)=>{
                             
                             <span>
                                 <img src={require('./icons/share.svg')} alt="" style={{marginRight:'5px'}}/>
-                                {props.reply}
+                                {props.rtCount}
                             </span>
                         </div>
                         <span className='date'>

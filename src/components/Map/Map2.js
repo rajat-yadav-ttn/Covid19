@@ -44,6 +44,7 @@ const Map2 = () => {
       }}
       style={{
         height:'100%',
+        width:'100%',
         marginTop:'-25px',
         marginLeft:'-13px'
       }}

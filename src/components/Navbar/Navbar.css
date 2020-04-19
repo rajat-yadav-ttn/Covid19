@@ -17,7 +17,7 @@ nav{
 }
 
 .logo_txt{
-    font-size:25px;
+    font-size:1.5625rem;
     font-weight:700;
     margin-left:15px;
 }
@@ -66,3 +66,50 @@ nav{
     color:#FF0019;
 }
 
+.menu_btn{
+    position: relative;
+    right:-40px;
+    display: none;
+}
+
+.menu_btn{
+    background: none;
+    border:none;
+}
+
+.menu_btn  div{
+    height:3px;
+    margin-top:5px;
+    width:25px;
+    background-color:#FF0019 ;
+}
+
+@media(max-width:768px){
+    .nav_opts_list{
+        display: none;
+    }
+
+
+    .menu_btn{
+        display: block;
+    }
+}
+
+@media(max-width:400px){
+    .logo_txt{
+        font-size: 1.3rem;
+    }
+
+    .logo_img{
+        width:35px;
+        height:35px;
+    }
+
+    .logo{
+        margin-left:20px;
+    }
+
+    .menu_btn{
+        right:-30px;
+    }
+}

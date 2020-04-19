@@ -49,4 +49,9 @@
 } */
 
 
-
+@media(max-width:768px){
+    figure{
+        width:50%;
+        margin:0 auto;
+    }
+}

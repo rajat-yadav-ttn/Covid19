@@ -21,6 +21,7 @@ const FAQs =()=>{
                     {
                         QNAList.map((item,index)=>{
                             return <QAbox 
+                                        key={index}
                                         index={index+1}
                                         ques={item.ques}
                                         answer={item.answer}

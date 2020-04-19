@@ -81,6 +81,10 @@ class SpreadTrends extends Component{
         recCases:[],
         showDec:false,
         decCases:[],
+
+        casesInc:false,
+        deathsInc:false,
+        recoveredInc:false,
     }
     
     
@@ -119,22 +123,23 @@ componentDidMount(){
 
 async fetchHistoryData(){
   let cases=[];
+
   await fetch('https://corona.lmao.ninja/v2/historical/all')
           .then(res=>res.json())
           .then(res=>{
              cases=res;
           });
 
-          // console.log(cases);
+          // objects into array of objects
           let casesArr=Object.keys(cases).map((key)=>cases[key]);
           // console.log(casesArr);
 
           let confirmed=casesArr[0];
             let casesKeys=Object.keys(confirmed).reverse().slice(0,7).reverse();
             this.setState({datesLabel:casesKeys})
-
-
-            let cnfCases=Object.values(confirmed).reverse().slice(0,7).reverse();
+    
+            // getting  Cases of 7 days 
+          let cnfCases=Object.values(confirmed).reverse().slice(0,7).reverse();
             this.setState({cnfCases:cnfCases})
 
           let recovered=casesArr[2];
@@ -145,8 +150,8 @@ async fetchHistoryData(){
             let decCases=Object.values(deceased).reverse().slice(0,7).reverse();
             this.setState({decCases:decCases})
 
-          
-        }
+           
+            }
         
 
 

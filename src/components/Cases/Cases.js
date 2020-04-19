@@ -10,21 +10,14 @@ import * as actions from '../../store/actions';
 
 
 class Cases extends Component{
-//     constructor(props){
-//         super(props);
-//     //     this.state={
-//     //     cases:[],
-//     //     isLoading:true,
-//     //  }
-// }
 
     componentDidMount(){
         this.props.fetchCases();
     }
 
-    componentWillUnmount(){
-        clearTimeout(this.intervalID);
-    }
+    // componentWillUnmount(){
+    //     clearTimeout(this.intervalID);
+    // }
 
 
         // getCases(){
@@ -38,7 +31,6 @@ class Cases extends Component{
 
     render(){
 
-        // console.log(this.props.cases)
         return(
             <div className='cases_row'>
                 
@@ -84,7 +76,7 @@ const mapStateToProps=state=>{
 
 const mapDispatchToProps=dispatch=>{
     return{
-        fetchCases:()=>{ dispatch(actions.fetchCases()) }
+        fetchCases:()=>{ dispatch(actions.fetchCases()) },
     }
 }
 
