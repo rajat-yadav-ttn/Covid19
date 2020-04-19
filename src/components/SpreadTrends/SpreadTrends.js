@@ -34,6 +34,7 @@ const Confirmed =props=>(
     </div>
 );
 
+
 const Recovered=props=>(
     <div> <Line
     data={props.recData}
