@@ -93,6 +93,10 @@ nav{
     background:none;
 }
 
+.darkMode_btn:hover{
+    cursor: pointer;
+}
+
 .darkMode_btn img{
     width:40px;
     height:40px;
