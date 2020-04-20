@@ -89,3 +89,16 @@ h3{
     margin:15px 5px;
     border-radius:50%;
 }
+
+.news_loading{
+    font-size:1.4rem;
+    color:#30313A;
+    font-weight: 600;
+    margin-top:8%;
+    margin-left:11%;
+}
+
+.slider{
+    position: relative;
+    height:208px;
+}

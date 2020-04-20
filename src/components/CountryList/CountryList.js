@@ -16,6 +16,10 @@ class CountryList extends Component{
         this.getCountries();
     }
 
+    componentWillUnmount(){
+        clearTimeout(this.intervalID);
+    }
+
     async getCountries(){
         let countryCases;
         await fetch('https://corona-api.com/countries')
@@ -27,11 +31,14 @@ class CountryList extends Component{
                     isLoading:false
                 }))
 
+
                 let sortedCases=countryCases.sort((prev,curr)=>
                      curr.latest_data.confirmed-prev.latest_data.confirmed
                     );
 
                 this.setState({countries:sortedCases});
+                console.log('refresh countries');
+            this.intervalID = setInterval(this.getCountries.bind(this),900000);
     }    
 
     handleSearchInput=event=>{

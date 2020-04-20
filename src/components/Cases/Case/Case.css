@@ -10,7 +10,7 @@
     width:100%;
     z-index: 111;
     background-color: #fff;
-    flex-basis:20%;
+    flex-basis:20.5%;
 }
 
 .case_container:not(:first-child){

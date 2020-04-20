@@ -14,6 +14,8 @@ const NewsItem=props=>{
      m=pdate.getMonth(),
      y=pdate.getFullYear(),
      date=`${d}/${m+1}/${y}`;
+
+  
     
   return(
       <div className='news_item_container'>
@@ -85,8 +87,15 @@ class News extends Component{
         totalSlides={3}
        
       >
-        <Slider>  
-        {slideRender()}
+        <Slider className='slider'>  
+          {
+            this.props.isNewsLoading?
+            <div className='news_loading'>
+              Loading...
+            </div> 
+              :
+            slideRender()
+          }
         </Slider>
 
        
@@ -119,6 +128,4 @@ const mapDispatchToProps=dispatch=>{
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(News);
-// export default News;
 
-// twurl authorize --consumer-key iRXTer7Xap9pRc5E2XTXUZpuH --consumer-secret 7m0ZqO0YSgxJ1myuB4iflwwF5fZZFcYWk6iqiIIBYFlYe7lWae

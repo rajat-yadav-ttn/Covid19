@@ -87,6 +87,7 @@ nav{
 @media(max-width:768px){
     .nav_opts_list{
         display: none;
+        margin-right: 0px;
     }
 
 

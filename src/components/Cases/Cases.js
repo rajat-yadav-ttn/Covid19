@@ -12,13 +12,19 @@ import * as actions from '../../store/actions';
 class Cases extends Component{
 
     componentDidMount(){
-        this.props.fetchCases();
+        // this.props.fetchCases();
+        this.getCases();
     }
 
-    // componentWillUnmount(){
-    //     clearTimeout(this.intervalID);
-    // }
+    componentWillUnmount(){
+        clearTimeout(this.intervalID);
+    }
 
+        getCases(){
+            this.props.fetchCases();
+            console.log('refresh');
+            this.intervalID = setInterval(this.getCases.bind(this),900000);
+        }
 
         // getCases(){
         //     console.log('refresh');
@@ -30,7 +36,6 @@ class Cases extends Component{
 
 
     render(){
-
         return(
             <div className='cases_row'>
                 
