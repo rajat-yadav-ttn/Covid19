@@ -72,13 +72,16 @@ class Navbar extends Component{
                 <button
                     className='darkMode_btn' 
                     onClick={()=>this.props.darkMode(this.props.isDark===false?true:false)}>
-                    {this.props.isDark? 'LIGHT' :'DARK'}
+                    {this.props.isDark? <img src={require('./icons/sun.png')} alt='light'/>:
+                                        <img src={require('./icons/moon.png')} alt='dark'/>
+                            }
                 </button>
                    
     
                 </div>
                 <Drawer showDrawer={this.state.showDrawer} 
                         drawerClose={this.drawerClose}
+                        isDark={this.props.isDark}
                         />
             </nav>
         );
