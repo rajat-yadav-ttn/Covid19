@@ -1,6 +1,7 @@
 body{
-    background-color: #f7f7f7;
+    background:#f7f7f7;
 }
+
 
 .home_container{
     display: flex;

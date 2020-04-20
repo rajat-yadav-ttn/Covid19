@@ -34,8 +34,8 @@ class LatestTweets extends Component{
     render(){
 
         return(
-            <div className='latest_tweets_container'>
-                <h3>Latest Tweets</h3>
+            <div className='latest_tweets_container' style={{background:this.props.isDark?'#25274b':'#fff'}}>
+                <h3 style={{color:this.props.isDark?'#ccccea':'#30313A'}}>Latest Tweets</h3>
 
                 {
                     
@@ -50,6 +50,7 @@ class LatestTweets extends Component{
                             profileImg={item.user.profile_image_url}
                             fav={item.favorite_count}
                             rtCount={item.retweet_count}
+                            isDark={this.props.isDark}
                         />
                     })
                 }

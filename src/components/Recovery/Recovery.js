@@ -17,11 +17,11 @@ class Recovery extends Component{
 
         let percentage=(this.props.recovered/this.props.affected)*100
         return(
-            <div className='container'>
+            <div className='recovery_container' style={{background:this.props.isDark?'#25274b':'#fff'}}>
 
            
                 
-            <div className='heading'> Ratio of Recovery</div>  
+            <div className='heading' style={{color:this.props.isDark?'#ccccea':'#30313A'}}> Ratio of Recovery</div>  
 
                 <figure>
                     <svg viewBox='0 0 38 38'>
@@ -29,8 +29,8 @@ class Recovery extends Component{
                             cx='19'
                             cy='19'
                             r='16'
-                            fill='#f5f5f5'
-                            stroke='#f5f5f5'
+                            fill={this.props.isDark?'#4b4d80':'#f5f5f5'}
+                            stroke={this.props.isDark?'#4b4d80':'#f5f5f5'}
                         />
 
                         <circle
@@ -54,12 +54,14 @@ class Recovery extends Component{
                             cx='19'
                             cy='19'
                             r='10'
-                            fill='#fff'
+                            fill={this.props.isDark?'#7275b5':'#fff'}
                             filter="url(#shadow)"
+                            
+                            
                         />
 
                             <g>
-                                <text x='11' y='21' fontSize='6px'>                                    
+                                <text x='11' y='21' fontSize='6px' fill={this.props.isDark?'#ccccea':'#30313A'}>                                    
                                     {
                                         !this.props.isCasesLoading &&
                                         `${percentage.toFixed(1)}%` 
@@ -76,14 +78,14 @@ class Recovery extends Component{
             </div>    */}
 
             <div className='aff_rec_data'> 
-                <div>
+                <div style={{color:this.props.isDark?'#7e83c2':'#52586A'}}>
                 {
                     this.props.affected>3?
                     `${this.props.affected/1000}k` : this.props.affected
                 } Affected
                 </div>
                    
-                <div>
+                <div style={{color:this.props.isDark?'#7e83c2':'#52586A',marginBottom:'30px'}} >
                     
                     {
                         this.props.recovered>3?

@@ -18,7 +18,7 @@ const colorScale = scaleLinear()
   .domain([100, 80000])
   .range(["#FFC4C6","#FF797D","#F52D5C"]);
 
-const Map2 = () => {
+const Map2 = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -29,12 +29,12 @@ const Map2 = () => {
 // console.log(data);
 
   return (
-    <div className='map_container'>
+    <div className='map_container' style={{background:props.isDark?'#25274b':'#fff'}}>
       <div className='map_label'>
-         <span className="head"> COVID-19 Affected Areas </span>
+         <span className="head" style={{color:props.isDark?'#ccccea':'#30313A'}}> COVID-19 Affected Areas </span>
           <div className="legend">
-              <span><div className='color_block'></div> Most Affected</span>
-              <span><div className='color_block least'></div>Less Affected</span>
+              <span style={{color:props.isDark?'#ccccea':'#30313A'}}><div className='color_block'></div> Most Affected</span>
+              <span style={{color:props.isDark?'#ccccea':'#30313A'}}><div className='color_block least'></div>Less Affected</span>
           </div>
       </div>
     <ComposableMap

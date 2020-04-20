@@ -10,12 +10,13 @@ import LatestTweets from '../../components/LatestTweets/LatestTweets';
 import SpreadTrends from '../../components/SpreadTrends/SpreadTrends';
 import News from '../../components/News/News';
 
+import {connect} from 'react-redux';
 
 class Home extends Component{
-   
     render(){
+        const {isDark}=this.props;
         return(
-            <div>
+            <div className="body" style={{background:isDark?'#100a22':'#f7f7f7'}}>
             <div className='home_container'>
                 <div className='left_area'>
                     <div className='cases_container'>
@@ -24,29 +25,29 @@ class Home extends Component{
                     
                     <div className='map_country_row'>
                         <div className='CountryList_container'>
-                            <CountryList />
+                            <CountryList isDark={isDark}/>
                         </div>
                         <div className='Map_container'>
-                            <Map2/>
+                            <Map2 isDark={isDark}/>
                         </div>
                     </div>
 
                     <div className='st_news margin_top_20'>
                         <div className='SpreadTrends_container'>
-                                <SpreadTrends />
+                                <SpreadTrends isDark={isDark}/>
                         </div>
                         <div className='News_container'>
-                                <News />
+                                <News isDark={isDark}/>
                         </div>
                     </div>
 
                 </div>
                 <div className='right_area'>
                     <div className='recovery_container'>
-                        <Recovery />
+                        <Recovery isDark={isDark}/>
                     </div>
                     <div className='latest_tweet'>
-                        <LatestTweets />
+                        <LatestTweets isDark={isDark}/>
                     </div>
                 </div>
             </div>
@@ -56,4 +57,10 @@ class Home extends Component{
     }
 }
 
-export default Home;
+const mapStateToProps=state=>{
+    return{
+        isDark:state.isDark,        
+    }
+}
+
+export default connect(mapStateToProps)(Home);

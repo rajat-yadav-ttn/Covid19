@@ -59,6 +59,7 @@ class Cases extends Component{
                                     caseHeading={item.caseHeading}
                                     caseQty={item.caseQty.toLocaleString()}
                                     increased={item.increased}
+                                    isDark={this.props.isDark}
                                 />
                                 );
                        
@@ -73,6 +74,7 @@ const mapStateToProps=state=>{
     return{
         cases:state.cases,
         isLoading:state.isCasesLoading,
+        isDark:state.isDark,
     }
 }
 

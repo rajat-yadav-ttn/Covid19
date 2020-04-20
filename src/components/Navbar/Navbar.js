@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import '../../assets/fonts.css';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions';
 
 import Drawer from './Drawer';
 
@@ -23,8 +24,10 @@ class Navbar extends Component{
     }
 
     render(){
+        console.log(this.props.isDark)
+        const {isDark}=this.props;
         return(
-            <nav>
+            <nav style={{background:isDark?'#1f2244':'#fff'}}>
                 <div className='logo'>
                     <img src={require('../Images/nav/virus.svg')} 
                         alt="logo" 
@@ -38,6 +41,7 @@ class Navbar extends Component{
                         <li> 
                             <NavLink 
                                 to='/' 
+                                style={{color:this.props.isDark?'#ccccea':'#52586A'}}
                                 className='nav_link_item'
                                 activeClassName='active'
                                 exact
@@ -45,6 +49,7 @@ class Navbar extends Component{
                         </li>
                         <li> 
                             <NavLink 
+                                style={{color:this.props.isDark?'#ccccea':'#52586A'}}
                                 className='nav_link_item'
                                 activeClassName='active'
                                 to='/faqs'>FAQs</NavLink>
@@ -52,6 +57,7 @@ class Navbar extends Component{
                         <li> 
                             <NavLink 
                                 className='nav_link_item'
+                                style={{color:this.props.isDark?'#ccccea':'#52586A'}}
                                 activeClassName='active'
                                 to='/helpful-links'>HELPFUL LINKS</NavLink>
                         </li>
@@ -62,6 +68,13 @@ class Navbar extends Component{
                         <div></div>    
                         <div></div>    
                     </button>   
+
+                <button
+                    className='darkMode_btn' 
+                    onClick={()=>this.props.darkMode(this.props.isDark===false?true:false)}>
+                    {this.props.isDark? 'LIGHT' :'DARK'}
+                </button>
+                   
     
                 </div>
                 <Drawer showDrawer={this.state.showDrawer} 
@@ -73,5 +86,20 @@ class Navbar extends Component{
 
 }
 
+const mapStateToProps=state=>{
+    return{
+        isDark:state.isDark,        
+    }
+}
 
-export default Navbar;
+
+
+
+const mapDispatchToProps=dispatch=>{
+    return{
+        darkMode:(val)=>{dispatch(actions.darkMode(val))}
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Navbar);

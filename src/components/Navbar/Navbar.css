@@ -84,6 +84,12 @@ nav{
     background-color:#FF0019 ;
 }
 
+.darkMode_btn{
+    position: absolute;
+    top:20px;
+    right:40px;
+}
+
 @media(max-width:768px){
     .nav_opts_list{
         display: none;
@@ -93,6 +99,10 @@ nav{
 
     .menu_btn{
         display: block;
+    }
+
+    .darkMode_btn{
+        margin-right:-10px;
     }
 }
 
@@ -111,6 +121,10 @@ nav{
     }
 
     .menu_btn{
-        right:-30px;
+        right:10px;
     }
+
+
+   
+
 }

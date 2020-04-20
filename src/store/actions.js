@@ -41,8 +41,14 @@ export const fetchNews=()=>{
     }
 }
 
-
-
+export const darkMode=(isDark)=>{
+    return dispatch=>{
+        dispatch({
+            type:'DARK_MODE',
+            isDark,
+        })
+    }
+}
 
 
 

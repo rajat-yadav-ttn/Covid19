@@ -5,6 +5,7 @@ const initialState={
     recovered:0,
     news:null,
     isNewsLoading:true,
+    isDark:false,
 }
 
 const reducer=(state=initialState,action)=>{
@@ -49,6 +50,12 @@ const reducer=(state=initialState,action)=>{
                 ...state,
                 news:action.data.articles,
                 isNewsLoading:false,
+            }
+
+        case 'DARK_MODE':
+            return{
+                ...state,
+                isDark:action.isDark,
             }
 
 

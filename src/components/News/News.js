@@ -20,17 +20,18 @@ const NewsItem=props=>{
   return(
       <div className='news_item_container'>
        <div className='date_source'> 
-        <span className='source'>Source: 
+        <span className='source' style={{color:props.isDark?'#7e83c2':'#30313A'}}>Source: 
             <a target="_blank" href={props.url}>{props.source}</a>
         </span>
-        <span className='date'>{date}</span>
+        <span className='date' style={{color:props.isDark?'#7e83c2':'#30313A'}}>{date}</span>
       </div>
       <div className='thumbnail'>
           <img src={props.newsThumb} alt='' />
       </div>
-          <div className='title'>{props.title}</div>
+          <div className='title' 
+            style={{color:props.isDark?'#ccccea':'#30313A'}}>{props.title}</div>
             
-      <p className='content'>
+      <p className='content' style={{color:props.isDark?'#7e83c2':'#30313A'}}>
         {props.content}
       </p> 
       
@@ -66,6 +67,7 @@ class News extends Component{
                       url={item.url}
                       content={item.content}
                       publishedAt={item.publishedAt}
+                      isDark={this.props.isDark}
                     />
               </Slide>
             ))
@@ -78,8 +80,8 @@ class News extends Component{
       //   console.log(this.props.news)}
       
       return(
-        <div className='news_container'>
-                <h3>News</h3>
+        <div className='news_container' style={{background:this.props.isDark?'#25274b':'#fff'}}>
+                <h3 style={{color:this.props.isDark?'#ccccea':'#30313A'}}>News</h3>
                
       <CarouselProvider
         naturalSlideWidth={100}

@@ -1,9 +1,9 @@
-.container{
+.recovery_container{
     background-color: #fff;
     box-shadow: 0px 5px 20px 1px #1425401A;
     border-radius:8px;
     width:100%;
-    padding-bottom:30px !important;    
+    border:none;
     /* position: relative; */
 }
 
@@ -33,6 +33,7 @@
     flex-direction: column;
     align-items: center;
     margin-top:-20px;
+    margin-bottom:30px;
 }
 
 .aff_rec_data div{

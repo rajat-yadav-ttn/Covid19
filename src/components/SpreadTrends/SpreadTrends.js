@@ -211,16 +211,16 @@ async fetchHistoryData(){
             }
         }
         return(
-            <div className='spread_trends_container'>
+            <div className='spread_trends_container' style={{background:this.props.isDark?'#25274b':'#fff'}}>
                 <div className='heading_tab_row'>
-                <h3>Spread Trends</h3>
+                <h3 style={{color:this.props.isDark?'#ccccea':'#30313A'}}>Spread Trends</h3>
             
                     {/* <div> */}
                     <ul className='tabs'>
                         <li className='tab_btn'>
                             <button
                                 onClick={this.cnfHandler}
-                                style={{backgroundColor:showCnf?'#52586A':'#F5F5F5',
+                                style={{backgroundColor:showCnf?'#52586A':this.props.isDark?'#7e83c2':'#F5F5F5',
                                         color:showCnf?'#FFFFFF':'#30313A'}}>Confirmed
                             </button>
                         </li>
@@ -228,7 +228,7 @@ async fetchHistoryData(){
                         <li className='tab_btn'>
                         <button 
                             onClick={this.recHandler}
-                            style={{backgroundColor:showRec?'#52586A':'#F5F5F5',
+                            style={{backgroundColor:showRec?'#52586A':this.props.isDark?'#7e83c2':'#F5F5F5',
                                     color:showRec?'#FFFFFF':'#30313A'}}>Recovered
                             </button>
                         </li>
@@ -236,7 +236,7 @@ async fetchHistoryData(){
                         <li className='tab_btn'>
                             <button 
                                 onClick={this.decHandler}
-                                style={{backgroundColor:showDec?'#52586A':'#F5F5F5',
+                                style={{backgroundColor:showDec?'#52586A':this.props.isDark?'#7e83c2':'#F5F5F5',
                                     color:showDec?'#FFFFFF':'#30313A'}}>Deceased
                             </button>
                         </li>

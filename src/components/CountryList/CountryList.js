@@ -56,7 +56,7 @@ render(){
     })
 
         return(
-            <div className='search_list_container'>
+            <div className='search_list_container' style={{background:this.props.isDark?'#25274b':'#fff'}}>
                 <div className='wrapper'>
                     <input 
                         type='text' 
@@ -64,6 +64,10 @@ render(){
                         className='search_input'
                         onChange={this.handleSearchInput}
                         value={this.state.searchVal}
+                        style={{
+                            background:this.props.isDark?'#2e315d':'#f7f7f7',
+                            color:this.props.isDark?'#ccccea':'#30313A'
+                        }}
                         />
 
                     <div className='country_list'>
@@ -93,6 +97,7 @@ render(){
                                             increased={this.state.increased}
                                             code={i.code.toLowerCase()}
                                             isLoading={this.state.isLoading}
+                                            isDark={this.props.isDark}
                                         />
                             })
                         }
