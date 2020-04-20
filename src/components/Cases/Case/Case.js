@@ -15,7 +15,7 @@ const Case = props =>{
                     
                     <span className='icons'>
                         { 
-                            props.isCasesInc?
+                            props.increased?
                             <img src={require('../../Images/up-down/Up.svg')} alt="up"/> :
                             <img src={require('../../Images/up-down/Down.svg')} alt="down"/> 
                         }
