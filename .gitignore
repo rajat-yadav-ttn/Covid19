@@ -3,7 +3,7 @@
 # dependencies
 /node_modules
 
-/public
+
 /src/index.css
 /src/App.test.js
 
