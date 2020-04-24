@@ -51,15 +51,28 @@ body{
     margin-left:9px;
 }
 
+@media(max-width:1037px){
+
+    .st_news{
+        flex-direction: column;
+    }
+
+    .SpreadTrends_container{
+        flex-basis:30%;
+    }
+
+    .News_container{
+        flex-basis:70%;
+        margin-top:20px;
+        margin-left:0px;
+    }
+
+}
+
 
 @media(max-width:768px){
     .home_container,.map_country_row,.st_news{
         flex-direction: column;
-    }
-
-    .News_container{
-        margin-top:20px;
-        margin-left:0px;
     }
 
     .Map_container{
