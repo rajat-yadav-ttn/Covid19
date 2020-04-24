@@ -1,11 +1,6 @@
-/* .faq_body{
-    background:#f7f7f7;
-} */
-
 .faq_container{
     width:80%;
     margin:auto;
-    /* padding-bottom:20px; */
     height:100%;
 }
 
@@ -16,7 +11,6 @@
     padding-top:20px;
     margin:auto;
 }
-
 
 .QA_box{
     box-shadow: 0px 5px 20px 1px #1425401A;

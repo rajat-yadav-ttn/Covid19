@@ -8,7 +8,6 @@
     width:95%;
     border-radius:30px;
     height:40px;
-    /* border:1px solid #adadad; */
     border:none;
     box-shadow:2px 2px 4px 2px #1425401A; 
     background-color:#f7f7f7;
@@ -38,9 +37,7 @@
     outline: 1px solid slategrey;
   }
 
-
 /* Country Stat CSS  */
-
 
 .country_stat_container{
     display: flex;
@@ -57,9 +54,6 @@
     align-items: center;
 }
 
-
-
-
 .country_name{
     font-size: 17px;
     font-weight:600;
@@ -67,7 +61,6 @@
     margin-bottom:3px;
     margin-left:8px;
 }
-
 
 .stat{
     font-size:13px;

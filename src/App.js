@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Home from "./containers/Home/Home";
+import FAQs from "./containers/FAQs/FAQs";
+import HelpfulLinks from "./containers/HelpfulLinks";
 
-// import Cases from './components/Cases/Cases';
-import  Home  from './containers/Home/Home';
-import  FAQs  from './containers/FAQs/FAQs';
-import HelpfulLinks from './containers/HelpfulLinks';
-
-import {Switch , Route} from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-
-
+import { Switch, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
 class App extends Component {
-
-
   render() {
     return (
       <div>
-          <Navbar />
+        <Navbar />
 
         <div>
           <Switch>
@@ -25,7 +19,6 @@ class App extends Component {
             <Route path="/faqs" component={FAQs} />
             <Route path="/helpful-links" component={HelpfulLinks} />
           </Switch>
-
         </div>
       </div>
     );

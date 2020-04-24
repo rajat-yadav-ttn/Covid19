@@ -8,18 +8,15 @@ body{
 .home_container{
     display: flex;
     padding:22px 20px;
-    /* background:#F7F7F7; */
 }
 
 .left_area{
-    /* flex:0.8; */
     flex-basis:75%;
 }
 
 .map_country_row{
     display: flex;
 }
-
 
 .CountryList_container{
     flex-basis:40%;
@@ -32,11 +29,9 @@ body{
 }
 
 .right_area{
-    /* flex:0.2; */
     flex-basis:25%;
     margin-left:18px;
 }  
-
 
 .st_news{
     display: flex;
@@ -50,8 +45,6 @@ body{
     flex-basis:55%;
     margin-right:9px;
 }
-
-
 
 .News_container{
     flex-basis:45%;

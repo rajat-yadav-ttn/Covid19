@@ -27,11 +27,6 @@ nav{
     align-items: center;
     color:#FF0019;
      margin-left:36px;
-    /*margin-top:15px; */
-}
-
-.nav_opts_list{
-    /* margin-right:100px; */
 }
 
 .list_wrap{
@@ -121,9 +116,6 @@ nav{
         margin-right:-10px;
     }
 }
-
-
-
 
 @media(max-width:400px){
     .logo_txt{
